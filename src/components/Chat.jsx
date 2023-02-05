@@ -45,7 +45,6 @@ export const Chat = () => {
 
   const onEmojiClick = ({ emoji }) => { setMessage(`${message} ${emoji}`) };
 
-
   const handleSubmt = (e) => {
     e.preventDefault();
 
@@ -56,12 +55,16 @@ export const Chat = () => {
   }
 
   const leftRoom = () => {
-    socket.emit('leftRoom', {params});
+    socket.emit('leftRoom', { params });
     navigate('/');
   }
 
+  const clickOut = () => {
+    setOpen(false);
+  }
+
   return (
-    <div className={styles.wrap}>
+    <div className={styles.wrap} onClick={clickOut}>
       <div className={styles.header}>
         <div className={styles.title}>
           {params.room}
@@ -99,8 +102,6 @@ export const Chat = () => {
               <EmojiPicker onEmojiClick={onEmojiClick} />
             </div>
           )}
-
-
         </div>
 
         <div className={styles.button}>
