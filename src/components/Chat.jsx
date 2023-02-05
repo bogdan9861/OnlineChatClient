@@ -7,7 +7,7 @@ import Messages from './Messages';
 
 import styles from '../styles/Chat.module.css'
 import ico from '../images/emoji.svg'
-const socket = io.connect('https://online-chat-pdg9.onrender.com')
+const socket = io.connect('http://localhost:5000')
 
 
 export const Chat = () => {
@@ -39,11 +39,10 @@ export const Chat = () => {
     });
   }, []);
 
-  console.log(state);
-
   const handleChange = ({ target: { value } }) => { setMessage(value) }
 
   const onEmojiClick = ({ emoji }) => { setMessage(`${message} ${emoji}`) };
+
 
   const handleSubmt = (e) => {
     e.preventDefault();
@@ -55,16 +54,13 @@ export const Chat = () => {
   }
 
   const leftRoom = () => {
-    socket.emit('leftRoom', { params });
+    socket.emit('leftRoom', {params});
     navigate('/');
   }
 
-  const clickOut = () => {
-    setOpen(false);
-  }
 
   return (
-    <div className={styles.wrap} onClick={clickOut}>
+    <div className={styles.wrap}>
       <div className={styles.header}>
         <div className={styles.title}>
           {params.room}
