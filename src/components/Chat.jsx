@@ -7,7 +7,7 @@ import Messages from './Messages';
 
 import styles from '../styles/Chat.module.css'
 import ico from '../images/emoji.svg'
-const socket = io.connect('https://dazzling-narwhal-c0eacd.netlify.app')
+const socket = io.connect('https://online-chat-pdg9.onrender.com')
 
 
 export const Chat = () => {
