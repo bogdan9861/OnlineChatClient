@@ -27,7 +27,7 @@ const Main = () => {
   return (
     <div className={styles.wrap}>
       <div className={styles.container}>
-        <h1 className={styles.heading}>Join</h1>
+        <h1 className={styles.heading}>Подключение</h1>
 
         <form className={styles.form}>
           <div className={styles.group}>
@@ -35,7 +35,7 @@ const Main = () => {
               type="text"
               name="name"
               value={values[NAME]}
-              placeholder="Username"
+              placeholder="Имя"
               className={styles.input}
               onChange={handleChange}
               autoComplete="off"
@@ -46,7 +46,7 @@ const Main = () => {
             <input
               type="text"
               name="room"
-              placeholder="Room"
+              placeholder="Комната"
               value={values[ROOM]}
               className={styles.input}
               onChange={handleChange}
@@ -61,7 +61,7 @@ const Main = () => {
             to={`/chat?name=${values[NAME]}&room=${values[ROOM]}`}
           >
             <button type="submit" className={styles.button}>
-              Sign In
+              Подключиться
             </button>
           </Link>
         </form>

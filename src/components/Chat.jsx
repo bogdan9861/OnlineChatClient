@@ -57,7 +57,6 @@ export const Chat = () => {
     navigate('/');
   }
 
-
   return (
     <div className={styles.wrap}>
       <div className={styles.header}>
