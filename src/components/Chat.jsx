@@ -7,7 +7,7 @@ import Messages from './Messages';
 
 import styles from '../styles/Chat.module.css'
 import ico from '../images/emoji.svg'
-const socket = io.connect('https://online-chat-pdg9.onrender.com')
+const socket = io.connect('https://chat-server-fdds.onrender.com')
 
 export const Chat = () => {
 
